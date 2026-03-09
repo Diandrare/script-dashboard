@@ -2,28 +2,37 @@
 <html>
 <head>
 <title>Script Dashboard</title>
+
 <style>
 body{
  font-family:Arial;
  background:#111;
  color:white;
+ text-align:center;
 }
 
 table{
  border-collapse:collapse;
- width:100%;
+ width:90%;
+ margin:auto;
+ margin-top:20px;
 }
 
 td,th{
  border:1px solid #444;
- padding:8px;
+ padding:10px;
+}
+
+th{
+ background:#222;
 }
 </style>
+
 </head>
 
 <body>
 
-<h2>Users Running Script</h2>
+<h2>Roblox Script Users</h2>
 
 <table id="table">
 <tr>
@@ -53,7 +62,7 @@ async function load(){
 
 }
 
-load()
+setInterval(load,2000)
 
 </script>
 
