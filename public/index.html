@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Script Dashboard</title>
+<style>
+body{
+ font-family:Arial;
+ background:#111;
+ color:white;
+}
 
+table{
+ border-collapse:collapse;
+ width:100%;
+}
+
+td,th{
+ border:1px solid #444;
+ padding:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Users Running Script</h2>
+
+<table id="table">
+<tr>
+<th>Username</th>
+<th>UserId</th>
+<th>Game</th>
+<th>Time</th>
+</tr>
+</table>
+
+<script>
+
+async function load(){
+
+ let res = await fetch("/data")
+ let data = await res.json()
+
+ let table = document.getElementById("table")
+
+ data.forEach(u=>{
+  let row = table.insertRow()
+  row.insertCell().innerText = u.username
+  row.insertCell().innerText = u.userid
+  row.insertCell().innerText = u.placeid
+  row.insertCell().innerText = u.time
+ })
+
+}
+
+load()
+
+</script>
+
+</body>
+</html>
