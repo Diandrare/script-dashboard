@@ -1,7 +1,6 @@
 {
   "name": "script-dashboard",
   "version": "1.0.0",
-  "description": "Roblox Script User Dashboard",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
